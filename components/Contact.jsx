@@ -98,7 +98,14 @@ export default function Contact() {
                 <span className="text-2xl">🌐</span>
                 <div>
                   <p className="font-medium">Portfolio</p>
-                  <p className="text-gray-600 dark:text-gray-300">for now not available</p>
+                  <a
+                    href="https://portfolio-seven-green-65.vercel.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 hover:underline dark:text-blue-400"
+                  >
+                    Visit my portfolio
+                  </a>
                 </div>
               </div>
             </div>
