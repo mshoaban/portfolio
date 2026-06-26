@@ -7,7 +7,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center max-w-7xl mx-auto px-6"
+      className="min-h-screen flex items-center max-w-7xl mx-auto px-6 pt-24 lg:pt-28"
     >
       <div className="grid lg:grid-cols-2 gap-16 items-center w-full">
 
@@ -21,7 +21,7 @@ export default function Hero() {
             transition={{ duration: .5 }}
             className="inline-flex rounded-full border border-indigo-300 dark:border-indigo-700 px-4 py-2 text-sm mb-6"
           >
-            Available for Full-Time • Remote • Freelance
+            Open to Full-Time • Remote • Freelance Opportunities
           </motion.p>
 
           <motion.h1

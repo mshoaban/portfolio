@@ -5,9 +5,9 @@ import { motion } from "framer-motion";
 export default function ProfessionalHighlights() {
   const highlights = [
     {
-      title: "Commercial Experience",
+      title: "Production Experience",
       description:
-        "Contributed to the development and maintenance of 15+ commercial web applications across healthcare, insurance, enterprise, and social platforms."
+        "Contributed to the development and maintenance of 15+ production web applications across healthcare, insurance, enterprise, and social platforms."
     },
 
     {
@@ -23,7 +23,7 @@ export default function ProfessionalHighlights() {
     },
 
     {
-      title: "Continuous Learning",
+      title: "Professional Development",
       description:
         "Actively expanding knowledge in Cyber Security, cloud technologies, software architecture, and modern software development practices."
     }
