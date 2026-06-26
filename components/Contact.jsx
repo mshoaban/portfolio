@@ -54,10 +54,10 @@ export default function Contact() {
                 </p>
 
                 <a
-                  href="mailto:your@email.com"
+                  href="mailto:mshoaban09@gmail.com"
                   className="font-medium hover:text-indigo-600 transition-colors"
                 >
-                  your@email.com
+                  mshoaban09@gmail.com
                 </a>
               </div>
 
@@ -67,10 +67,10 @@ export default function Contact() {
                 </p>
 
                 <a
-                  href="tel:+923001234567"
+                  href="tel:+923346731495"
                   className="font-medium hover:text-indigo-600 transition-colors"
                 >
-                  +92 300 1234567
+                  +92 334 673 1495
                 </a>
               </div>
 
@@ -109,7 +109,7 @@ export default function Contact() {
             <div className="space-y-5">
 
               <a
-                href="#"
+                href="https://github.com/mshoaban"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block rounded-xl border border-gray-200 dark:border-gray-700 px-5 py-4 hover:border-indigo-500 transition-colors"
@@ -118,7 +118,7 @@ export default function Contact() {
               </a>
 
               <a
-                href="#"
+                href="https://www.linkedin.com/in/muhammad-shoaban/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block rounded-xl border border-gray-200 dark:border-gray-700 px-5 py-4 hover:border-indigo-500 transition-colors"
@@ -127,21 +127,13 @@ export default function Contact() {
               </a>
 
               <a
-                href="#"
+                href="/resume.pdf"
+                download
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block rounded-xl border border-gray-200 dark:border-gray-700 px-5 py-4 hover:border-indigo-500 transition-colors"
               >
                 Resume / CV
-              </a>
-
-              <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block rounded-xl border border-gray-200 dark:border-gray-700 px-5 py-4 hover:border-indigo-500 transition-colors"
-              >
-                Portfolio Source Code
               </a>
 
             </div>
