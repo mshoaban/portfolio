@@ -1,36 +1,26 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  Briefcase,
-  Calendar,
-  CheckCircle2,
-  Code2,
-  FolderGit2,
-} from "lucide-react";
 
 export default function Experience() {
   const experience = {
     title: "Full Stack Developer",
-
     company: "Rated Solutions",
-
     location: "Pakistan",
-
     period: "Jan 2024 – Present",
 
     description:
-      "As a Full Stack Developer at Rated Solutions, I design, develop, and maintain production-ready web applications for healthcare, insurance, enterprise, and social platforms. My work includes building scalable backend systems, developing responsive frontend applications, designing efficient database architectures, integrating third-party APIs, and deploying secure solutions on Linux-based cloud infrastructure.",
+      "As a Full Stack Developer at Rated Solutions, I develop and maintain production-ready web applications for healthcare, insurance, enterprise, and social platforms. My responsibilities include designing scalable backend systems, building responsive frontend interfaces, developing RESTful APIs, optimizing databases, integrating third-party services, and deploying secure applications on cloud infrastructure.",
 
     achievements: [
       "Contributed to 15+ commercial web applications across multiple industries.",
-      "Built scalable REST APIs using Laravel, PHP, Node.js, and CodeIgniter.",
-      "Developed responsive frontend applications with React, JavaScript, Tailwind CSS, and Bootstrap.",
-      "Designed and optimized MySQL and MongoDB database structures.",
-      "Integrated third-party APIs and authentication systems.",
-      "Managed deployments on AWS EC2 and Linux servers.",
-      "Collaborated with cross-functional teams throughout the software development lifecycle.",
-      "Troubleshot production issues and optimized application performance."
+      "Built scalable RESTful APIs using Laravel, PHP, Node.js, and CodeIgniter.",
+      "Developed responsive user interfaces with React, JavaScript, Tailwind CSS, and Bootstrap.",
+      "Designed and optimized MySQL and MongoDB databases for performance and reliability.",
+      "Integrated third-party APIs, authentication systems, and cloud services.",
+      "Deployed and maintained production applications on AWS EC2 and Linux servers.",
+      "Collaborated with developers, designers, QA engineers, and project managers throughout the development lifecycle.",
+      "Resolved production issues, optimized application performance, and maintained secure coding standards."
     ],
 
     technologies: [
@@ -41,10 +31,10 @@ export default function Experience() {
       "React",
       "React Native",
       "JavaScript",
-      "Tailwind CSS",
-      "Bootstrap",
       "MySQL",
       "MongoDB",
+      "Tailwind CSS",
+      "Bootstrap",
       "AWS EC2",
       "Linux",
       "Git",
@@ -54,46 +44,46 @@ export default function Experience() {
     projects: [
       {
         name: "SafeSend",
-        type: "Secure Messaging Platform",
+        category: "Secure Messaging Platform",
         description:
-          "Built a secure messaging platform featuring encrypted communication, secure file sharing, authentication, and role-based access control.",
+          "Developed a secure messaging platform featuring encrypted communication, secure file sharing, authentication, and role-based access control."
       },
 
       {
         name: "Medic Exams",
-        type: "Healthcare & Insurance Platform",
+        category: "Healthcare & Insurance Platform",
         description:
-          "Developed and maintained a healthcare platform supporting medical examinations, patient records, appointments, and insurance workflows.",
+          "Developed and maintained a healthcare management system supporting medical examinations, patient records, appointments, and insurance workflows."
       },
 
       {
         name: "Fenapi",
-        type: "Insurance Management System",
+        category: "Insurance Management System",
         description:
-          "Built an enterprise insurance management system for policy administration, claims processing, and customer management.",
+          "Built an enterprise insurance platform for policy administration, customer management, and claims processing."
       },
 
       {
         name: "FeelVaelo",
-        type: "Healthcare Platform",
+        category: "Healthcare Platform",
         description:
-          "Developed a healthcare platform enabling users to access medical services and manage appointments through a modern interface.",
+          "Developed a modern healthcare platform enabling users to access medical services and manage appointments through a responsive web application."
       },
 
       {
         name: "FreeSoil",
-        type: "Podcast & Debate Platform",
+        category: "Podcast & Debate Platform",
         description:
-          "Built a social platform supporting podcast publishing, debates, user engagement, and content management.",
+          "Built a community-driven social platform supporting podcast publishing, debates, user engagement, and scalable content management."
       },
 
       {
         name: "LiveWaves",
-        type: "Social Media Platform",
+        category: "Social Media Platform",
         description:
-          "Developed features for a live-streaming social platform supporting real-time interactions and scalable backend services.",
-      },
-    ],
+          "Contributed to a live-streaming social platform supporting real-time interactions, content sharing, and scalable backend services."
+      }
+    ]
   };
 
   return (
@@ -102,95 +92,80 @@ export default function Experience() {
       className="max-w-7xl mx-auto px-6 py-24"
     >
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
+        initial={{ opacity: 0, y: 25 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: .6 }}
+        transition={{ duration: 0.6 }}
         className="text-center mb-16"
       >
         <h2 className="text-4xl font-bold">
           Work Experience
         </h2>
 
-        <p className="mt-4 text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-          Building secure, scalable and production-ready software solutions for
-          healthcare, insurance, enterprise and modern web platforms.
+        <p className="mt-4 text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+          Building scalable, secure, and production-ready software solutions
+          across healthcare, insurance, enterprise, and modern web platforms.
         </p>
       </motion.div>
 
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
+        initial={{ opacity: 0, y: 25 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: .6 }}
-        className="rounded-3xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-zinc-900 p-8"
+        transition={{ duration: 0.6 }}
+        className="rounded-3xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-zinc-900 p-8 lg:p-10 shadow-sm"
       >
         {/* Header */}
 
-        <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center gap-6">
+        <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-4">
 
           <div>
+            <h3 className="text-3xl font-bold">
+              {experience.title}
+            </h3>
 
-            <div className="flex items-center gap-3 mb-2">
-
-              <Briefcase size={22} />
-
-              <h3 className="text-3xl font-bold">
-                {experience.title}
-              </h3>
-
-            </div>
-
-            <p className="text-lg text-indigo-600 font-semibold">
-              {experience.company} • {experience.location}
+            <p className="mt-2 text-lg text-indigo-600 font-medium">
+              {experience.company} · {experience.location}
             </p>
-
           </div>
 
-          <div className="flex items-center gap-2 text-gray-500">
-
-            <Calendar size={18} />
-
+          <span className="inline-flex rounded-full bg-indigo-100 dark:bg-indigo-900/40 px-4 py-2 text-sm font-medium text-indigo-700 dark:text-indigo-300">
             {experience.period}
-
-          </div>
+          </span>
 
         </div>
 
         {/* Description */}
 
-        <p className="mt-8 leading-8 text-gray-600 dark:text-gray-300">
-          {experience.description}
-        </p>
-
-        {/* Achievements */}
-
         <div className="mt-10">
 
-          <h4 className="flex items-center gap-2 text-xl font-semibold mb-5">
+          <h4 className="text-lg font-semibold mb-4">
+            Overview
+          </h4>
 
-            <CheckCircle2 size={20} />
+          <p className="leading-8 text-gray-600 dark:text-gray-300">
+            {experience.description}
+          </p>
 
+        </div>
+
+        {/* Contributions */}
+
+        <div className="mt-12">
+
+          <h4 className="text-lg font-semibold mb-5">
             Key Contributions
-
           </h4>
 
           <div className="grid md:grid-cols-2 gap-4">
 
-            {experience.achievements.map((item, index) => (
+            {experience.achievements.map((item) => (
 
               <div
-                key={index}
-                className="flex items-start gap-3"
+                key={item}
+                className="rounded-xl border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-zinc-800/40 p-4"
               >
-
-                <CheckCircle2
-                  className="text-green-500 mt-1"
-                  size={18}
-                />
-
-                <p className="text-gray-600 dark:text-gray-300">
+                <p className="text-gray-700 dark:text-gray-300 leading-7">
                   {item}
                 </p>
-
               </div>
 
             ))}
@@ -203,12 +178,8 @@ export default function Experience() {
 
         <div className="mt-12">
 
-          <h4 className="flex items-center gap-2 text-xl font-semibold mb-5">
-
-            <Code2 size={20} />
-
-            Tech Stack
-
+          <h4 className="text-lg font-semibold mb-5">
+            Technology Stack
           </h4>
 
           <div className="flex flex-wrap gap-3">
@@ -217,7 +188,7 @@ export default function Experience() {
 
               <span
                 key={tech}
-                className="px-4 py-2 rounded-full bg-indigo-100 dark:bg-indigo-900/40 text-sm font-medium"
+                className="rounded-full border border-gray-200 dark:border-gray-700 bg-gray-100 dark:bg-zinc-800 px-4 py-2 text-sm font-medium"
               >
                 {tech}
               </span>
@@ -232,12 +203,8 @@ export default function Experience() {
 
         <div className="mt-12">
 
-          <h4 className="flex items-center gap-2 text-xl font-semibold mb-6">
-
-            <FolderGit2 size={20} />
-
+          <h4 className="text-lg font-semibold mb-6">
             Selected Projects
-
           </h4>
 
           <div className="grid lg:grid-cols-2 gap-6">
@@ -246,18 +213,18 @@ export default function Experience() {
 
               <div
                 key={project.name}
-                className="rounded-2xl border border-gray-200 dark:border-gray-800 p-6 hover:shadow-lg transition"
+                className="rounded-2xl border border-gray-200 dark:border-gray-800 p-6 hover:border-indigo-400 transition-all duration-300"
               >
 
-                <h5 className="font-bold text-lg">
+                <h5 className="text-xl font-semibold">
                   {project.name}
                 </h5>
 
-                <p className="text-indigo-600 text-sm mb-3">
-                  {project.type}
+                <p className="mt-1 text-sm font-medium text-indigo-600 dark:text-indigo-400">
+                  {project.category}
                 </p>
 
-                <p className="text-gray-600 dark:text-gray-300">
+                <p className="mt-4 leading-7 text-gray-600 dark:text-gray-300">
                   {project.description}
                 </p>
 
@@ -267,16 +234,23 @@ export default function Experience() {
 
           </div>
 
-          <p className="mt-8 text-center text-gray-500 italic">
-            + Worked on 10+ additional commercial applications including
-            inventory management systems, enterprise business solutions,
-            healthcare software, automation tools, and internal client projects.
-          </p>
+          <div className="mt-10 rounded-2xl border border-dashed border-indigo-300 dark:border-indigo-700 p-6 text-center">
+
+            <p className="text-gray-600 dark:text-gray-300 leading-7">
+              In addition to the projects listed above, I have contributed to
+              <span className="font-semibold text-indigo-600 dark:text-indigo-400">
+                {" "}10+ additional commercial applications{" "}
+              </span>
+              including inventory management systems, enterprise solutions,
+              automation tools, internal business applications, and client
+              projects.
+            </p>
+
+          </div>
 
         </div>
 
       </motion.div>
-
     </section>
   );
 }
