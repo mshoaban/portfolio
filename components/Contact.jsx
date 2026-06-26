@@ -1,118 +1,170 @@
 "use client";
+
 import { motion } from "framer-motion";
 
 export default function Contact() {
   return (
-    <section id="contact" className="max-w-6xl mx-auto px-6 py-20">
+    <section
+      id="contact"
+      className="max-w-7xl mx-auto px-6 py-24"
+    >
+      {/* Heading */}
+
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 25 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         className="text-center mb-16"
       >
-        <h2 className="text-3xl font-bold mb-4">Get In Touch</h2>
-        <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-          Ready to collaborate on your next project? Let&apos;s discuss how we can work together to bring your ideas to life.
+        <h2 className="text-4xl font-bold">
+          Get In Touch
+        </h2>
+
+        <p className="mt-4 max-w-3xl mx-auto leading-8 text-gray-600 dark:text-gray-400">
+          I'm always interested in discussing new opportunities, collaborating
+          on exciting projects, or connecting with fellow developers. Whether
+          you have a question, an idea, or a role you'd like to discuss, feel
+          free to reach out.
         </p>
       </motion.div>
 
-      <div className="grid lg:grid-cols-2 gap-12">
+      {/* Contact Card */}
 
-        {/* FORM */}
-        <motion.form
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6 }}
-          className="space-y-6"
-        >
-          <div className="grid md:grid-cols-2 gap-4">
-            <input
-              className="w-full p-4 border border-indigo-200 dark:border-indigo-800 rounded-xl bg-white dark:bg-indigo-950/20 focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 transition-colors"
-              placeholder="First Name"
-            />
-            <input
-              className="w-full p-4 border border-indigo-200 dark:border-indigo-800 rounded-xl bg-white dark:bg-indigo-950/20 focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 transition-colors"
-              placeholder="Last Name"
-            />
-          </div>
+      <motion.div
+        initial={{ opacity: 0, y: 25 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="max-w-4xl mx-auto rounded-3xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-zinc-900 p-10"
+      >
+        <div className="grid md:grid-cols-2 gap-10">
 
-          <input
-            className="w-full p-4 border border-indigo-200 dark:border-indigo-800 rounded-xl bg-white dark:bg-indigo-950/20 focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 transition-colors"
-            placeholder="Email"
-            type="email"
-          />
+          {/* Left */}
 
-          <input
-            className="w-full p-4 border border-indigo-200 dark:border-indigo-800 rounded-xl bg-white dark:bg-indigo-950/20 focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 transition-colors"
-            placeholder="Subject"
-          />
+          <div>
 
-          <textarea
-            className="w-full p-4 border border-indigo-200 dark:border-indigo-800 rounded-xl bg-white dark:bg-indigo-950/20 focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 transition-colors h-32 resize-none"
-            placeholder="Message"
-          />
+            <h3 className="text-2xl font-semibold mb-8">
+              Contact Information
+            </h3>
 
-          <button
-            type="submit"
-            className="w-full px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white rounded-xl font-medium transition-all shadow-lg hover:shadow-xl"
-          >
-            Send Message
-          </button>
-        </motion.form>
+            <div className="space-y-8">
 
-        {/* INFO */}
-        <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6 }}
-          className="space-y-6"
-        >
-          <div className="p-6 rounded-2xl bg-indigo-50/50 dark:bg-indigo-950/20 border border-indigo-200/50 dark:border-indigo-800/50">
-            <h3 className="text-xl font-semibold mb-4">Contact Information</h3>
-            <div className="space-y-4">
-              <div className="flex items-center gap-3">
-                <span className="text-2xl">📧</span>
-                <div>
-                  <p className="font-medium">Email</p>
-                  <p className="text-gray-600 dark:text-gray-300">mshoaban09@email.com</p>
-                </div>
+              <div>
+                <p className="text-sm uppercase tracking-wide text-gray-500 mb-2">
+                  Email
+                </p>
+
+                <a
+                  href="mailto:your@email.com"
+                  className="font-medium hover:text-indigo-600 transition-colors"
+                >
+                  your@email.com
+                </a>
               </div>
 
-              <div className="flex items-center gap-3">
-                <span className="text-2xl">📱</span>
-                <div>
-                  <p className="font-medium">Phone</p>
-                  <p className="text-gray-600 dark:text-gray-300">+92 334 6731495</p>
-                </div>
+              <div>
+                <p className="text-sm uppercase tracking-wide text-gray-500 mb-2">
+                  Phone
+                </p>
+
+                <a
+                  href="tel:+923001234567"
+                  className="font-medium hover:text-indigo-600 transition-colors"
+                >
+                  +92 300 1234567
+                </a>
               </div>
 
-              <div className="flex items-center gap-3">
-                <span className="text-2xl">📍</span>
-                <div>
-                  <p className="font-medium">Location</p>
-                  <p className="text-gray-600 dark:text-gray-300">DG Khan, Pakistan</p>
-                </div>
+              <div>
+                <p className="text-sm uppercase tracking-wide text-gray-500 mb-2">
+                  Location
+                </p>
+
+                <p className="font-medium">
+                  Dera Ghazi Khan, Punjab, Pakistan
+                </p>
               </div>
 
-              <div className="flex items-center gap-3">
-                <span className="text-2xl">🌐</span>
-                <div>
-                  <p className="font-medium">Portfolio</p>
-                  <a
-                    href="https://portfolio-seven-green-65.vercel.app/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-600 hover:underline dark:text-blue-400"
-                  >
-                    Visit my portfolio
-                  </a>
-                </div>
+              <div>
+                <p className="text-sm uppercase tracking-wide text-gray-500 mb-2">
+                  Availability
+                </p>
+
+                <p className="font-medium text-green-600 dark:text-green-400">
+                  Open to Full-Time, Remote & Freelance Opportunities
+                </p>
               </div>
+
             </div>
-          </div>
-        </motion.div>
 
-      </div>
+          </div>
+
+          {/* Right */}
+
+          <div>
+
+            <h3 className="text-2xl font-semibold mb-8">
+              Connect With Me
+            </h3>
+
+            <div className="space-y-5">
+
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block rounded-xl border border-gray-200 dark:border-gray-700 px-5 py-4 hover:border-indigo-500 transition-colors"
+              >
+                GitHub
+              </a>
+
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block rounded-xl border border-gray-200 dark:border-gray-700 px-5 py-4 hover:border-indigo-500 transition-colors"
+              >
+                LinkedIn
+              </a>
+
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block rounded-xl border border-gray-200 dark:border-gray-700 px-5 py-4 hover:border-indigo-500 transition-colors"
+              >
+                Resume / CV
+              </a>
+
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block rounded-xl border border-gray-200 dark:border-gray-700 px-5 py-4 hover:border-indigo-500 transition-colors"
+              >
+                Portfolio Source Code
+              </a>
+
+            </div>
+
+            <div className="mt-10 rounded-2xl bg-gray-50 dark:bg-zinc-800 p-6">
+
+              <h4 className="font-semibold mb-3">
+                Looking for a developer?
+              </h4>
+
+              <p className="leading-7 text-gray-600 dark:text-gray-400">
+                I specialize in building secure, scalable, and maintainable web
+                applications using Laravel, React, Next.js, Node.js, and modern
+                web technologies. I'm always excited to contribute to meaningful
+                products and solve real-world problems through software.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+      </motion.div>
     </section>
   );
 }

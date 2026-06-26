@@ -5,100 +5,113 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center px-6 max-w-7xl mx-auto">
+    <section
+      id="home"
+      className="min-h-screen flex items-center max-w-7xl mx-auto px-6"
+    >
+      <div className="grid lg:grid-cols-2 gap-16 items-center w-full">
 
-      <div className="grid lg:grid-cols-2 gap-12 items-center w-full">
+        {/* Left */}
 
-        {/* LEFT CONTENT */}
-        <div className="space-y-6">
+        <div>
 
-          {/* Name */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: .5 }}
+            className="inline-flex rounded-full border border-indigo-300 dark:border-indigo-700 px-4 py-2 text-sm mb-6"
+          >
+            Available for Full-Time • Remote • Freelance
+          </motion.p>
+
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl md:text-6xl font-bold"
+            transition={{ duration: .6, delay: .1 }}
+            className="text-5xl lg:text-6xl font-bold leading-tight"
           >
             Muhammad Shoaban
           </motion.h1>
 
-          {/* Role */}
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-xl md:text-2xl text-gray-600 dark:text-gray-300"
+            transition={{ duration: .6, delay: .2 }}
+            className="text-2xl mt-3 text-indigo-600 dark:text-indigo-400 font-medium"
           >
-            Software Developer
+            Full Stack Developer
           </motion.h2>
 
-          {/* Location */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex items-center gap-2 text-gray-500 dark:text-gray-400"
-          >
-            <span>📍</span>
-            <span>DG Khan, Pakistan</span>
-          </motion.div>
-
-          {/* Description */}
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-gray-600 dark:text-gray-300 max-w-lg"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: .6, delay: .3 }}
+            className="mt-2 text-gray-500"
           >
-            Passionate software developer creating innovative solutions with modern technologies.
-            Specialized in web development and scalable applications.
+            Dera Ghazi Khan, Punjab, Pakistan
           </motion.p>
 
-          {/* Buttons */}
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: .6, delay: .4 }}
+            className="mt-8 text-lg leading-8 text-gray-600 dark:text-gray-400 max-w-xl"
+          >
+            Full Stack Developer with professional experience building scalable
+            web applications for healthcare, insurance, enterprise, and social
+            platforms. Specialized in Laravel, React, Node.js, REST APIs, and
+            modern web technologies with a strong focus on performance,
+            security, and maintainable software.
+          </motion.p>
+
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            className="flex gap-4 pt-6"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: .5 }}
+            className="flex flex-wrap gap-4 mt-10"
           >
             <a
-              className="px-8 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white rounded-xl font-medium transition-all shadow-lg hover:shadow-xl"
-              href="#projects"
+              href="#experience"
+              className="px-8 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-medium transition"
             >
-              View Projects
+              View Experience
             </a>
 
             <a
-              className="px-8 py-3 border border-indigo-300 dark:border-indigo-700 hover:bg-indigo-50 dark:hover:bg-indigo-950/50 rounded-xl font-medium transition-colors"
               href="/resume.pdf"
               download
+              className="px-8 py-3 rounded-xl border border-gray-300 dark:border-gray-700 hover:border-indigo-500 transition"
             >
-              Download Resume
+              Download CV
             </a>
           </motion.div>
         </div>
 
-        {/* RIGHT IMAGE */}
+        {/* Right */}
+
         <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
+          initial={{ opacity: 0, scale: .9 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{ duration: .8 }}
           className="flex justify-center"
         >
           <div className="relative">
-            <div className="absolute inset-0 bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 rounded-2xl blur-3xl opacity-30"></div>
+
+            <div className="absolute inset-0 rounded-full blur-3xl bg-indigo-500/20"></div>
+
             <Image
               src="/me-up.png"
-              width={400}
-              height={400}
-              className="relative rounded-2xl shadow-2xl"
-              alt="Muhammad Shoaban - Full Stack Developer"
+              width={420}
+              height={420}
+              priority
+              alt="Muhammad Shoaban"
+              className="relative rounded-3xl"
             />
+
           </div>
         </motion.div>
 
       </div>
-
     </section>
   );
 }

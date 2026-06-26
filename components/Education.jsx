@@ -1,68 +1,137 @@
 "use client";
+
 import { motion } from "framer-motion";
 
 export default function Education() {
   const education = [
     {
-      institution: "Ghazi University, Dera Ghazi Khan",
-      degree: "BS CS & IT (Bachelor of Science in Computer Science & Information Technology)",
-      period: "2021 - 2025",
-      description: "Focused on Advanced Computer Science topics",
-      logo: "/vu-logo.png" // Add appropriate logo
+      title: "Bachelor of Science in Computer Science & Information Technology",
+      organization: "Ghazi University, Dera Ghazi Khan",
+      period: "2021 – 2025",
+      description:
+        "Completed a Bachelor's degree with a focus on software engineering, database systems, web technologies, algorithms, networking, and modern software development practices."
+    }
+  ];
+
+  const certifications = [
+    {
+      title: "Web Development",
+      provider: "Coursera",
+      description:
+        "Completed coursework covering modern web development concepts, frontend technologies, backend development, responsive design, and best practices."
     },
     {
-      institution: "Government Degree College, Taunsa Sharif",
-      degree: "Intermediate in Computer Science",
-      period: "2019 - 2021",
-      description: "Focused on Software Development and Programming",
-      logo: "/aptech-logo.png"
+      title: "DevOps",
+      provider: "Udemy",
+      description:
+        "Studied DevOps fundamentals including Linux, deployment workflows, version control, CI/CD concepts, and modern development practices."
     },
     {
-      institution: "Government High School, Taunsa Sharif",
-      degree: "Matric in Computer Science",
-      period: "2017 - 2019",
-      description: "Focus on Computer Science fundamentals",
-      logo: "/shipowners-logo.png"
+      title: "Web Application Security",
+      provider: "Udemy",
+      description:
+        "Focused on secure web application development, authentication, common vulnerabilities, OWASP principles, and security best practices."
     }
   ];
 
   return (
-    <section id="education" className="max-w-6xl mx-auto px-6 py-20">
+    <section
+      id="education"
+      className="max-w-7xl mx-auto px-6 py-24"
+    >
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 25 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         className="text-center mb-16"
       >
-        <h2 className="text-3xl font-bold mb-4">My Education</h2>
-        <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-          A journey of continuous learning and academic achievement
+        <h2 className="text-4xl font-bold">
+          Education & Certifications
+        </h2>
+
+        <p className="mt-4 max-w-3xl mx-auto text-gray-600 dark:text-gray-400 leading-8">
+          My academic background and professional certifications reflect a
+          commitment to continuous learning and staying current with modern
+          software development practices.
         </p>
       </motion.div>
 
-      <div className="space-y-8">
-        {education.map((edu, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: index * 0.1 }}
-            className="flex flex-col md:flex-row items-center gap-6 p-6 rounded-2xl bg-indigo-50/50 dark:bg-indigo-950/20 border border-indigo-200/50 dark:border-indigo-800/50 hover:shadow-lg hover:shadow-indigo-200/50 dark:hover:shadow-indigo-900/30 transition-all"
+      {/* Education */}
+
+      <motion.div
+        initial={{ opacity: 0, y: 25 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="mb-16"
+      >
+        <h3 className="text-2xl font-semibold mb-8">
+          Education
+        </h3>
+
+        {education.map((item) => (
+          <div
+            key={item.title}
+            className="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-zinc-900 p-8"
           >
-            <div className="flex-shrink-0">
-              <div className="w-16 h-16 bg-indigo-100 dark:bg-indigo-900 rounded-full flex items-center justify-center">
-                <span className="text-2xl">🎓</span>
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+              <div>
+                <h4 className="text-xl font-semibold">
+                  {item.title}
+                </h4>
+
+                <p className="text-indigo-600 dark:text-indigo-400 mt-1">
+                  {item.organization}
+                </p>
               </div>
+
+              <span className="mt-3 md:mt-0 text-sm text-gray-500">
+                {item.period}
+              </span>
             </div>
-            <div className="flex-1 text-center md:text-left">
-              <h3 className="text-xl font-semibold mb-1">{edu.institution}</h3>
-              <p className="text-indigo-600 dark:text-indigo-400 font-medium mb-2">{edu.degree}</p>
-              <p className="text-gray-600 dark:text-gray-300 mb-2">{edu.description}</p>
-              <span className="text-sm text-gray-500 dark:text-gray-400">{edu.period}</span>
-            </div>
-          </motion.div>
+
+            <p className="leading-8 text-gray-600 dark:text-gray-400">
+              {item.description}
+            </p>
+          </div>
         ))}
-      </div>
+      </motion.div>
+
+      {/* Certifications */}
+
+      <motion.div
+        initial={{ opacity: 0, y: 25 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        <h3 className="text-2xl font-semibold mb-8">
+          Certifications
+        </h3>
+
+        <div className="grid md:grid-cols-3 gap-8">
+
+          {certifications.map((certificate) => (
+
+            <div
+              key={certificate.title}
+              className="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-zinc-900 p-8 hover:border-indigo-400 transition-all duration-300"
+            >
+              <h4 className="text-xl font-semibold mb-2">
+                {certificate.title}
+              </h4>
+
+              <p className="text-indigo-600 dark:text-indigo-400 mb-4">
+                {certificate.provider}
+              </p>
+
+              <p className="leading-7 text-gray-600 dark:text-gray-400">
+                {certificate.description}
+              </p>
+            </div>
+
+          ))}
+
+        </div>
+      </motion.div>
     </section>
   );
 }
