@@ -29,7 +29,7 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-xl md:text-2xl text-gray-600 dark:text-gray-300"
           >
-            Full Stack Developer | MERN Enthusiast
+            Software Developer
           </motion.h2>
 
           {/* Location */}
@@ -50,7 +50,7 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="text-gray-600 dark:text-gray-300 max-w-lg"
           >
-            Passionate full-stack developer creating innovative solutions with modern technologies.
+            Passionate software developer creating innovative solutions with modern technologies.
             Specialized in web development and scalable applications.
           </motion.p>
 

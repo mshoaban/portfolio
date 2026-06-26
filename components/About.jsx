@@ -12,7 +12,7 @@ export default function About() {
       >
         <h2 className="text-3xl font-bold mb-4">About Me</h2>
         <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-          I am a passionate full-stack developer with a strong foundation in computer science.
+          I am a passionate software developer with a strong foundation in computer science.
           I enjoy solving problems, building efficient solutions, and collaborating in innovative environments.
         </p>
       </motion.div>
@@ -40,7 +40,7 @@ export default function About() {
           <div className="text-4xl mb-4">💼</div>
           <h3 className="text-xl font-semibold mb-2">Experience</h3>
           <p className="text-gray-600 dark:text-gray-300">
-            Full-stack development experience with modern web technologies.
+            Experienced in building modern web applications using Laravel, PHP, MySQL, JavaScript, React, and Tailwind CSS. Skilled in developing responsive, secure, and scalable solutions.
           </p>
         </motion.div>
 
