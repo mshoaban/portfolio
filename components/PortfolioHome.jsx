@@ -2,70 +2,136 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { FiArrowDownRight, FiArrowUpRight, FiDownload, FiGithub, FiLinkedin, FiMail, FiMenu, FiX } from "react-icons/fi";
+import {
+  FiArrowRight,
+  FiCheck,
+  FiDownload,
+  FiGithub,
+  FiLinkedin,
+  FiMail,
+  FiMenu,
+  FiPhone,
+  FiX,
+} from "react-icons/fi";
 
-const projects = [
-  { n:"01", name:"SYM Forklift", type:"Operations platform", copy:"A live machine and forklift management system built end-to-end with AI-assisted workflows.", tech:"Laravel / Livewire / MySQL", tone:"acid" },
-  { n:"02", name:"MedicsExams", type:"Healthcare platform", copy:"A nationwide mobile blood-screening ecosystem with role-based access, payments, messaging, and real-time updates.", tech:"Laravel / AWS / Pusher / Twilio", tone:"dark" },
-  { n:"03", name:"Fenapi", type:"Financial management", copy:"A feature-rich wallet and fiscal management system with an API ecosystem and AI-powered signature verification.", tech:"CodeIgniter / REST APIs / PayPal", tone:"sand" },
-  { n:"04", name:"SafeSend", type:"Secure sharing", copy:"Password-protected, end-to-end encrypted file and message sharing for multiple account types.", tech:"Laravel / Livewire / RBAC", tone:"blue" },
-  { n:"05", name:"LiveWaves & FreeSoil", type:"Social platforms", copy:"Live streaming, event discovery, music, debates, podcasts, and real-time community interaction.", tech:"React / Laravel / AWS", tone:"pink" },
-  { n:"06", name:"Education & Commerce", type:"Digital transformation", copy:"Management and commerce platforms for institutions, government programs, donations, and retail operations.", tech:"Laravel / CodeIgniter / Stripe", tone:"orange" },
+const expertise = [
+  { title: "Backend Engineering", text: "Scalable Laravel, PHP, CodeIgniter, and Node.js systems with clean architecture and reliable REST APIs.", tags: ["Laravel", "PHP", "Node.js", "REST APIs"] },
+  { title: "Frontend Development", text: "Responsive, accessible interfaces built for real users and maintainable product teams.", tags: ["React.js", "Vue.js", "Livewire", "Tailwind CSS"] },
+  { title: "Cloud & Delivery", text: "Production deployments, CI/CD workflows, Linux administration, and cloud infrastructure ownership.", tags: ["AWS", "Azure", "CI/CD", "Linux"] },
 ];
 
-const skills = ["Laravel","PHP","React.js","Vue.js","Livewire","Node.js","MySQL","PostgreSQL","REST APIs","AWS","Azure","CI/CD","Tailwind CSS","Pusher","Twilio","Git"];
+const projects = [
+  { name: "SYM Forklift", category: "Operations Management", text: "Production platform for managing and tracking machines and forklifts, delivered end-to-end with AI-assisted development workflows.", tech: "Laravel · Livewire · MySQL" },
+  { name: "MedicsExams", category: "Healthcare Technology", text: "Nationwide blood-screening platform with role-based access, mobile APIs, payments, messaging, and real-time notifications.", tech: "Laravel · AWS · Pusher · Twilio" },
+  { name: "Fenapi", category: "Financial Management", text: "Management ecosystem with wallet and fiscal operations, mobile APIs, payments, and AI-powered signature verification.", tech: "CodeIgniter · REST APIs · PayPal" },
+  { name: "SafeSend", category: "Security Platform", text: "Secure file and message sharing with encrypted, password-protected links and role-based account management.", tech: "Laravel · Livewire · MySQL" },
+  { name: "LiveWaves & FreeSoil", category: "Social Platforms", text: "Interactive social products supporting live streaming, event discovery, music, debates, podcasts, and real-time engagement.", tech: "React.js · Laravel · AWS" },
+  { name: "Institutional Platforms", category: "Education & Commerce", text: "Management and commerce systems for educational institutions, government programs, donations, and retail operations.", tech: "Laravel · CodeIgniter · Stripe" },
+];
 
 export default function PortfolioHome() {
-  const [menuOpen,setMenuOpen]=useState(false);
-  return <main>
-    <header className="nav-wrap">
-      <a className="brand" href="#top" aria-label="Muhammad Shoaban home"><span>MS</span><div><b>Full Stack Developer</b><small><i/>Available for work</small></div></a>
-      <nav className="nav-pill" aria-label="Main navigation">
-        <a href="#top">Home</a><a href="#about">About</a><a href="#work">Work</a><a href="#experience">Experience</a>
-      </nav>
-      <a className="nav-cta" href="mailto:mshoaban09@gmail.com">Let&apos;s talk <FiArrowUpRight/></a>
-      <button className="menu-button" onClick={()=>setMenuOpen(!menuOpen)} aria-label="Toggle navigation">{menuOpen?<FiX/>:<FiMenu/>}</button>
-      {menuOpen && <div className="mobile-menu"><a onClick={()=>setMenuOpen(false)} href="#about">About</a><a onClick={()=>setMenuOpen(false)} href="#work">Work</a><a onClick={()=>setMenuOpen(false)} href="#experience">Experience</a><a href="/resume.pdf">Resume</a></div>}
-    </header>
+  const [open, setOpen] = useState(false);
+  const close = () => setOpen(false);
 
-    <section className="hero page-shell" id="top">
-      <div className="hero-grid reveal">
-        <p className="hero-kicker">Team lead. Product builder.<br/>Based in Lahore, Pakistan.</p>
-        <h1>I build digital<br/><span className="serif">products</span> that<br/>work <em>beautifully.</em></h1>
-        <div className="portrait-wrap"><div className="portrait-orbit">FULL STACK • TEAM LEAD • FULL STACK • TEAM LEAD •</div><Image src="/me-up.png" alt="Muhammad Shoaban" width={800} height={747} priority /></div>
-        <div className="hero-bottom"><p>Results-driven full stack developer with 2+ years of experience shipping scalable web applications and leading teams from idea to production.</p><a href="#work" className="round-arrow" aria-label="View selected work"><FiArrowDownRight/></a></div>
-      </div>
-      <div className="ticker"><span>Laravel</span><i/> <span>React</span><i/> <span>Vue</span><i/> <span>Cloud</span><i/> <span>API Architecture</span><i/> <span>Team Leadership</span></div>
-    </section>
+  return (
+    <main id="top">
+      <header className="site-header">
+        <div className="container header-inner">
+          <a className="logo" href="#top" onClick={close} aria-label="Muhammad Shoaban home">
+            <span>MS</span><div><strong>Muhammad Shoaban</strong><small>Full Stack Developer & Team Lead</small></div>
+          </a>
+          <nav className={open ? "main-nav open" : "main-nav"} aria-label="Main navigation">
+            <a href="#about" onClick={close}>About</a>
+            <a href="#expertise" onClick={close}>Expertise</a>
+            <a href="#projects" onClick={close}>Projects</a>
+            <a href="#experience" onClick={close}>Experience</a>
+            <a className="nav-contact" href="#contact" onClick={close}>Contact</a>
+          </nav>
+          <button className="nav-toggle" type="button" onClick={() => setOpen(!open)} aria-expanded={open} aria-label="Toggle navigation">{open ? <FiX /> : <FiMenu />}</button>
+        </div>
+      </header>
 
-    <section className="about section-pad" id="about"><div className="page-shell">
-      <div className="about-head"><div><p className="eyebrow">What I do</p><h2>Engineering with<br/><span className="serif">ownership.</span></h2></div><p>I turn complex requirements into secure, scalable products - from backend architecture and database design to polished frontend experiences and production delivery.</p></div>
-      <div className="bento">
-        <article className="bento-main"><span>01</span><h3>Full-cycle<br/>development</h3><p>Architecture, APIs, interfaces, cloud deployment, and continuous optimization - one accountable workflow.</p><div className="code-lines">&lt;build&gt;<br/><b>&nbsp;&nbsp;secure · scalable · useful</b><br/>&lt;/build&gt;</div></article>
-        <article className="bento-stat"><b>2+</b><p>years building<br/>production software</p></article>
-        <article className="bento-lead"><span>LEADERSHIP</span><h3>From contributor<br/>to team lead.</h3><p>Guiding delivery, code reviews, task allocation, and technical direction across concurrent client projects.</p></article>
-        <article className="bento-quote"><p className="serif">“Good software is clear thinking made tangible.”</p></article>
-      </div>
-    </div></section>
+      <section className="hero-section">
+        <div className="container hero-layout">
+          <div className="hero-copy">
+            <div className="availability"><span /> Available for new opportunities</div>
+            <p className="overline">FULL STACK ENGINEERING · TECHNICAL LEADERSHIP</p>
+            <h1>Building reliable software that moves businesses forward.</h1>
+            <p className="hero-summary">I’m Muhammad Shoaban, a Full Stack Developer and Team Lead with 2+ years of experience delivering secure, scalable web applications across healthcare, finance, enterprise, and social platforms.</p>
+            <div className="hero-actions">
+              <a className="button primary" href="#projects">View my work <FiArrowRight /></a>
+              <a className="button secondary" href="/resume.pdf" download><FiDownload /> Download résumé</a>
+            </div>
+            <div className="hero-links">
+              <a href="https://github.com/mshoaban" target="_blank" rel="noreferrer"><FiGithub /> GitHub</a>
+              <a href="https://www.linkedin.com/in/muhammad-shoaban/" target="_blank" rel="noreferrer"><FiLinkedin /> LinkedIn</a>
+            </div>
+          </div>
+          <div className="profile-panel">
+            <div className="profile-photo"><Image src="/me-up.png" alt="Muhammad Shoaban" width={800} height={747} priority /></div>
+            <div className="profile-card">
+              <div><small>CURRENT ROLE</small><strong>Team Lead / Software Engineer</strong></div>
+              <div><small>LOCATION</small><strong>Lahore, Pakistan</strong></div>
+              <div><small>FOCUS</small><strong>Scalable Web Products</strong></div>
+            </div>
+          </div>
+        </div>
+        <div className="container metrics">
+          <div><strong>2+</strong><span>Years of experience</span></div>
+          <div><strong>15+</strong><span>Commercial applications</span></div>
+          <div><strong>6+</strong><span>Industries supported</span></div>
+          <div><strong>End-to-end</strong><span>Delivery ownership</span></div>
+        </div>
+      </section>
 
-    <section className="work section-pad" id="work"><div className="page-shell">
-      <div className="section-title"><div><p className="eyebrow">Selected work</p><h2>Built for the<br/><span className="serif">real world.</span></h2></div><p>Healthcare, finance, social platforms, secure sharing, education, and commerce - products designed to perform beyond the demo.</p></div>
-      <div className="project-grid">{projects.map(p=><article key={p.name} className={`project-card ${p.tone}`}><div className="project-top"><span>{p.n} / 06</span><FiArrowUpRight/></div><div><small>{p.type}</small><h3>{p.name}</h3><p>{p.copy}</p></div><footer>{p.tech}</footer></article>)}</div>
-    </div></section>
+      <section className="section about-section" id="about">
+        <div className="container two-column">
+          <div className="section-heading"><p className="overline">ABOUT ME</p><h2>Engineering expertise with a business mindset.</h2></div>
+          <div className="about-copy">
+            <p>I design, build, and deploy production applications from the database layer to the user interface. My work combines practical engineering decisions, clear communication, and consistent delivery.</p>
+            <p>As a Team Lead, I also guide task allocation, code review, technical direction, and project execution across multiple concurrent client engagements.</p>
+            <ul><li><FiCheck /> Secure and maintainable architecture</li><li><FiCheck /> Performance-focused database design</li><li><FiCheck /> Cross-functional team collaboration</li><li><FiCheck /> Production deployment and support</li></ul>
+          </div>
+        </div>
+      </section>
 
-    <section className="experience section-pad" id="experience"><div className="page-shell">
-      <div className="section-title light"><div><p className="eyebrow">Experience</p><h2>Growing by<br/><span className="serif">building.</span></h2></div><p>Hands-on engineering paired with increasing ownership of people, process, and production outcomes.</p></div>
-      <div className="timeline">
-        <article><div className="time">APR 2024 - PRESENT</div><div><span>RATEDSOL TECH</span><h3>Team Lead / Software Engineer</h3><p>Leading end-to-end web application delivery with Laravel, Livewire, CodeIgniter, PHP, and React. Architecting APIs and relational databases, building real-time systems, reviewing code, and setting technical direction.</p></div><b>01</b></article>
-        <article><div className="time">JAN 2024 - PRESENT</div><div><span>FREELANCE · REMOTE</span><h3>Web Application Developer</h3><p>Delivering reliable backend services for international clients, collaborating with frontend teams, and improving database, API, and application performance.</p></div><b>02</b></article>
-      </div>
-      <div className="skill-cloud">{skills.map(s=><span key={s}>{s}</span>)}</div>
-    </div></section>
+      <section className="section expertise-section" id="expertise">
+        <div className="container">
+          <div className="section-heading centered"><p className="overline">CORE EXPERTISE</p><h2>Capabilities built around product delivery.</h2><p>From system architecture to polished interfaces and production operations.</p></div>
+          <div className="expertise-grid">{expertise.map((item, index) => <article key={item.title} className="expertise-card"><span className="card-number">0{index + 1}</span><h3>{item.title}</h3><p>{item.text}</p><div className="tags">{item.tags.map(tag => <span key={tag}>{tag}</span>)}</div></article>)}</div>
+        </div>
+      </section>
 
-    <section className="education section-pad"><div className="page-shell edu-grid"><div><p className="eyebrow">Education</p><h2>The foundation,<br/><span className="serif">then the craft.</span></h2></div><div className="edu-card"><span>2021 - 2025</span><h3>BS Information Technology</h3><a href="https://www.gudgk.edu.pk/" target="_blank" rel="noreferrer">Ghazi University <FiArrowUpRight/></a><p>Data Structures & Algorithms · OOP · Database Management · Software Engineering · Information Security · Cloud Computing</p></div><div className="edu-card"><span>COURSE CERTIFICATE</span><h3>Web Development Essentials</h3><p>HTML, CSS and JavaScript · Coursera</p></div></div></section>
+      <section className="section projects-section" id="projects">
+        <div className="container">
+          <div className="section-heading projects-heading"><div><p className="overline">SELECTED PROJECTS</p><h2>Production work across complex domains.</h2></div><p>A selection of platforms I’ve helped architect, build, and deliver.</p></div>
+          <div className="projects-grid">{projects.map((project, index) => <article className="project-card" key={project.name}><div className="project-index">0{index + 1}</div><div className="project-body"><span>{project.category}</span><h3>{project.name}</h3><p>{project.text}</p><strong>{project.tech}</strong></div></article>)}</div>
+        </div>
+      </section>
 
-    <section className="contact section-pad" id="contact"><div className="page-shell contact-inner"><div><p className="eyebrow">Start a conversation</p><h2>Have a challenge?<br/><span className="serif">Let&apos;s build it.</span></h2></div><div className="contact-actions"><a href="mailto:mshoaban09@gmail.com"><FiMail/>mshoaban09@gmail.com<FiArrowUpRight/></a><a href="/resume.pdf" download><FiDownload/>Download résumé<FiArrowDownRight/></a></div></div></section>
+      <section className="section experience-section" id="experience">
+        <div className="container two-column experience-layout">
+          <div className="section-heading"><p className="overline">EXPERIENCE</p><h2>Progress driven by ownership and results.</h2><a className="text-link" href="/resume.pdf" download>Download full résumé <FiArrowRight /></a></div>
+          <div className="experience-list">
+            <article><div className="experience-meta"><span>APR 2024 — PRESENT</span><span>DERA GHAZI KHAN</span></div><h3>Team Lead / Software Engineer</h3><h4>RatedSol Tech</h4><p>Leading full-cycle application development, technical planning, code review, task allocation, database architecture, REST API delivery, real-time systems, and Azure CI/CD workflows.</p></article>
+            <article><div className="experience-meta"><span>JAN 2024 — PRESENT</span><span>REMOTE</span></div><h3>Web Application Developer</h3><h4>Freelance — Fiverr & Direct Clients</h4><p>Building secure backend services for international clients, collaborating with frontend teams, and improving database, API, and application performance.</p></article>
+            <article className="education-row"><div className="experience-meta"><span>2021 — 2025</span><span>GHAZI UNIVERSITY</span></div><h3>BS Information Technology</h3><p>Coursework in software engineering, database systems, information security, cloud computing, data structures, and algorithms.</p></article>
+          </div>
+        </div>
+      </section>
 
-    <footer className="footer"><div className="page-shell footer-top"><div><b>MUHAMMAD<br/>SHOABAN</b><p>Building useful digital products<br/>with care, clarity, and ownership.</p></div><div><small>CONNECT</small><a href="https://github.com/mshoaban" target="_blank" rel="noreferrer"><FiGithub/>GitHub</a><a href="https://www.linkedin.com/in/muhammad-shoaban/" target="_blank" rel="noreferrer"><FiLinkedin/>LinkedIn</a></div><div><small>CONTACT</small><a href="tel:+923346731495">+92 334 673 1495</a><a href="mailto:mshoaban09@gmail.com">Email me</a></div></div><div className="page-shell footer-bottom"><span>© 2026 Muhammad Shoaban</span><span>LAHORE · PAKISTAN</span></div></footer>
-  </main>;
+      <section className="contact-section" id="contact">
+        <div className="container contact-layout">
+          <div><p className="overline">GET IN TOUCH</p><h2>Let’s discuss your next project or opportunity.</h2><p>I’m open to remote, hybrid, and on-site roles, relocation, freelance projects, and technical collaboration.</p></div>
+          <div className="contact-card">
+            <a href="mailto:mshoaban09@gmail.com"><FiMail /><span><small>EMAIL</small><strong>mshoaban09@gmail.com</strong></span><FiArrowRight /></a>
+            <a href="tel:+923346731495"><FiPhone /><span><small>PHONE</small><strong>+92 334 673 1495</strong></span><FiArrowRight /></a>
+            <a href="https://www.linkedin.com/in/muhammad-shoaban/" target="_blank" rel="noreferrer"><FiLinkedin /><span><small>LINKEDIN</small><strong>Muhammad Shoaban</strong></span><FiArrowRight /></a>
+          </div>
+        </div>
+      </section>
+
+      <footer><div className="container footer-inner"><div className="logo footer-logo"><span>MS</span><div><strong>Muhammad Shoaban</strong><small>Full Stack Developer & Team Lead</small></div></div><p>© 2026 Muhammad Shoaban. All rights reserved.</p><a href="#top">Back to top ↑</a></div></footer>
+    </main>
+  );
 }
