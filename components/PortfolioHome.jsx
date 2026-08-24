@@ -63,7 +63,7 @@ export default function PortfolioHome() {
               <a className="button secondary" href="/resume.pdf" download><FiDownload /> Download résumé</a>
             </div>
             <div className="hero-links">
-              <a href="https://github.com/mshoaban" target="_blank" rel="noreferrer"><FiGithub /> GitHub</a>
+              <a href="https://github.com/muhammad-shoaban" target="_blank" rel="noreferrer"><FiGithub /> GitHub</a>
               <a href="https://www.linkedin.com/in/muhammad-shoaban/" target="_blank" rel="noreferrer"><FiLinkedin /> LinkedIn</a>
             </div>
           </div>
