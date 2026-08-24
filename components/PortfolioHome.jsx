@@ -59,7 +59,7 @@ export default function PortfolioHome() {
             <h1>Building reliable software that moves businesses forward.</h1>
             <p className="hero-summary">I’m Muhammad Shoaban, a Full Stack Developer and Team Lead with 2+ years of experience delivering secure, scalable web applications across healthcare, finance, enterprise, and social platforms.</p>
             <div className="hero-actions">
-              <a className="button primary" href="#projects">View my work <FiArrowRight /></a>
+              <a className="button primary" href="#projects">View my work<FiArrowRight /></a>
               <a className="button secondary" href="/resume.pdf" download><FiDownload /> Download résumé</a>
             </div>
             <div className="hero-links">
