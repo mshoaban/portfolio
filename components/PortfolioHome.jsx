@@ -38,7 +38,7 @@ export default function PortfolioHome() {
       <header className="site-header">
         <div className="container header-inner">
           <a className="logo" href="#top" onClick={close} aria-label="Muhammad Shoaban home">
-            <span>MS</span><div><strong>Muhammad Shoaban</strong><small>Full Stack Developer & Team Lead</small></div>
+            <span>MS</span><div><strong>Muhammad Shoaban</strong><small>Software Engineer</small></div>
           </a>
           <nav className={open ? "main-nav open" : "main-nav"} aria-label="Main navigation">
             <a href="#about" onClick={close}>About</a>
@@ -56,9 +56,9 @@ export default function PortfolioHome() {
         <div className="container hero-layout">
           <div className="hero-copy">
             <div className="availability"><span /> Available for new opportunities</div>
-            <p className="overline">FULL STACK ENGINEERING · TECHNICAL LEADERSHIP</p>
+            <p className="overline">FULL STACK ENGINEERING · SOFTWARE DEVELOPMENT</p>
             <h1>Building reliable software that moves businesses forward.</h1>
-            <p className="hero-summary">I’m Muhammad Shoaban, a Full Stack Developer and Team Lead with 2+ years of experience delivering secure, scalable web applications across healthcare, finance, enterprise, and social platforms.</p>
+            <p className="hero-summary">I’m Muhammad Shoaban, a Software Engineer with 2+ years of experience delivering secure, scalable web applications across healthcare, finance, enterprise, and social platforms.</p>
             <div className="hero-actions">
               <a className="button primary" href="#projects">View my work<FiArrowRight /></a>
               <a className="button secondary" href="/resume.pdf" download><FiDownload /> Download résumé</a>
@@ -71,7 +71,7 @@ export default function PortfolioHome() {
           <div className="profile-panel">
             <div className="profile-photo"><Image src="/me-up.png" alt="Muhammad Shoaban" width={800} height={747} priority /></div>
             <div className="profile-card">
-              <div><small>CURRENT ROLE</small><strong>Team Lead / Software Engineer</strong></div>
+              <div><small>CURRENT ROLE</small><strong>Software Engineer</strong></div>
               <div><small>LOCATION</small><strong>Lahore, Pakistan</strong></div>
               <div><small>FOCUS</small><strong>Scalable Web Products</strong></div>
             </div>
@@ -90,7 +90,7 @@ export default function PortfolioHome() {
           <div className="section-heading"><p className="overline">ABOUT ME</p><h2>Engineering expertise with a business mindset.</h2></div>
           <div className="about-copy">
             <p>I design, build, and deploy production applications from the database layer to the user interface. My work combines practical engineering decisions, clear communication, and consistent delivery.</p>
-            <p>As a Team Lead, I also guide task allocation, code review, technical direction, and project execution across multiple concurrent client engagements.</p>
+            <p>I also contribute to task planning, code review, technical direction, and project execution across multiple concurrent client engagements.</p>
             <ul><li><FiCheck /> Secure and maintainable architecture</li><li><FiCheck /> Performance-focused database design</li><li><FiCheck /> Cross-functional team collaboration</li><li><FiCheck /> Production deployment and support</li></ul>
           </div>
         </div>
@@ -114,7 +114,7 @@ export default function PortfolioHome() {
         <div className="container two-column experience-layout">
           <div className="section-heading"><p className="overline">EXPERIENCE</p><h2>Progress driven by ownership and results.</h2><a className="text-link" href="/resume.pdf" download>Download full résumé <FiArrowRight /></a></div>
           <div className="experience-list">
-            <article><div className="experience-meta"><span>APR 2024 — PRESENT</span><span>DERA GHAZI KHAN</span></div><h3>Team Lead / Software Engineer</h3><h4>RatedSol Tech</h4><p>Leading full-cycle application development, technical planning, code review, task allocation, database architecture, REST API delivery, real-time systems, and Azure CI/CD workflows.</p></article>
+            <article><div className="experience-meta"><span>APR 2024 — PRESENT</span><span>DERA GHAZI KHAN</span></div><h3>Software Engineer</h3><h4>RatedSol Tech</h4><p>Building full-cycle applications, technical planning, code review, task allocation, database architecture, REST API delivery, real-time systems, and Azure CI/CD workflows.</p></article>
             <article><div className="experience-meta"><span>JAN 2024 — MAR 2024</span><span>REMOTE</span></div><h3>Web Application Developer</h3><h4>Freelance — Fiverr & Direct Clients</h4><p>Building secure backend services for international clients, collaborating with frontend teams, and improving database, API, and application performance.</p></article>
           </div>
         </div>
@@ -144,7 +144,7 @@ export default function PortfolioHome() {
         </div>
       </section>
 
-      <footer><div className="container footer-inner"><div className="logo footer-logo"><span>MS</span><div><strong>Muhammad Shoaban</strong><small>Full Stack Developer & Team Lead</small></div></div><p>© 2026 Muhammad Shoaban. All rights reserved.</p><a href="#top">Back to top ↑</a></div></footer>
+      <footer><div className="container footer-inner"><div className="logo footer-logo"><span>MS</span><div><strong>Muhammad Shoaban</strong><small>Software Engineer</small></div></div><p>© 2026 Muhammad Shoaban. All rights reserved.</p><a href="#top">Back to top ↑</a></div></footer>
     </main>
   );
 }
