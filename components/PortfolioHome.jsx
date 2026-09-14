@@ -61,7 +61,7 @@ export default function PortfolioHome() {
             <p className="hero-summary">I’m Muhammad Shoaban, a Software Engineer with 2+ years of experience delivering secure, scalable web applications across healthcare, finance, enterprise, and social platforms.</p>
             <div className="hero-actions">
               <a className="button primary" href="#projects">View my work<FiArrowRight /></a>
-              <a className="button secondary" href="/resume_latest.pdf" download><FiDownload /> Download résumé</a>
+              <a className="button secondary" href="/resume_latest_new.pdf" download><FiDownload /> Download résumé</a>
             </div>
             <div className="hero-links">
               <a href="https://github.com/muhammad-shoaban" target="_blank" rel="noreferrer"><FiGithub /> GitHub</a>
@@ -112,7 +112,7 @@ export default function PortfolioHome() {
 
       <section className="section experience-section" id="experience">
         <div className="container two-column experience-layout">
-          <div className="section-heading"><p className="overline">EXPERIENCE</p><h2>Progress driven by ownership and results.</h2><a className="text-link" href="/resume_latest.pdf" download>Download full résumé <FiArrowRight /></a></div>
+          <div className="section-heading"><p className="overline">EXPERIENCE</p><h2>Progress driven by ownership and results.</h2><a className="text-link" href="/resume_latest_new.pdf" download>Download full résumé <FiArrowRight /></a></div>
           <div className="experience-list">
             <article><div className="experience-meta"><span>APR 2024 — PRESENT</span><span>DERA GHAZI KHAN</span></div><h3>Software Engineer</h3><h4>RatedSol Tech</h4><p>Building full-cycle applications, technical planning, code review, task allocation, database architecture, REST API delivery, real-time systems, and Azure CI/CD workflows.</p></article>
             <article><div className="experience-meta"><span>JAN 2024 — MAR 2024</span><span>REMOTE</span></div><h3>Web Application Developer</h3><h4>Freelance — Fiverr & Direct Clients</h4><p>Building secure backend services for international clients, collaborating with frontend teams, and improving database, API, and application performance.</p></article>
