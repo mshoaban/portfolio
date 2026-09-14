@@ -45,6 +45,7 @@ export default function PortfolioHome() {
             <a href="#expertise" onClick={close}>Expertise</a>
             <a href="#projects" onClick={close}>Projects</a>
             <a href="#experience" onClick={close}>Experience</a>
+            <a href="#education" onClick={close}>Education</a>
             <a className="nav-contact" href="#contact" onClick={close}>Contact</a>
           </nav>
           <button className="nav-toggle" type="button" onClick={() => setOpen(!open)} aria-expanded={open} aria-label="Toggle navigation">{open ? <FiX /> : <FiMenu />}</button>
@@ -114,8 +115,20 @@ export default function PortfolioHome() {
           <div className="section-heading"><p className="overline">EXPERIENCE</p><h2>Progress driven by ownership and results.</h2><a className="text-link" href="/resume.pdf" download>Download full résumé <FiArrowRight /></a></div>
           <div className="experience-list">
             <article><div className="experience-meta"><span>APR 2024 — PRESENT</span><span>DERA GHAZI KHAN</span></div><h3>Team Lead / Software Engineer</h3><h4>RatedSol Tech</h4><p>Leading full-cycle application development, technical planning, code review, task allocation, database architecture, REST API delivery, real-time systems, and Azure CI/CD workflows.</p></article>
-            <article><div className="experience-meta"><span>JAN 2024 — PRESENT</span><span>REMOTE</span></div><h3>Web Application Developer</h3><h4>Freelance — Fiverr & Direct Clients</h4><p>Building secure backend services for international clients, collaborating with frontend teams, and improving database, API, and application performance.</p></article>
-            <article className="education-row"><div className="experience-meta"><span>2021 — 2025</span><span>GHAZI UNIVERSITY</span></div><h3>BS Information Technology</h3><p>Coursework in software engineering, database systems, information security, cloud computing, data structures, and algorithms.</p></article>
+            <article><div className="experience-meta"><span>JAN 2024 — MAR 2024</span><span>REMOTE</span></div><h3>Web Application Developer</h3><h4>Freelance — Fiverr & Direct Clients</h4><p>Building secure backend services for international clients, collaborating with frontend teams, and improving database, API, and application performance.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section className="section education-section" id="education">
+        <div className="container two-column">
+          <div className="section-heading"><p className="overline">EDUCATION</p><h2>Academic foundation in information technology.</h2></div>
+          <div className="experience-list">
+            <article className="education-row">
+              <div className="experience-meta"><span>2021 — 2025</span><span>GHAZI UNIVERSITY</span></div>
+              <h3>BS Information Technology</h3>
+              <p>Coursework in software engineering, database systems, information security, cloud computing, data structures, and algorithms.</p>
+            </article>
           </div>
         </div>
       </section>
