@@ -6,7 +6,7 @@ import {
   FiArrowRight, FiCheck, FiDownload, FiGithub, FiLinkedin,
   FiMail, FiMenu, FiPhone, FiX, FiCode, FiLayers, FiCloud,
   FiCpu, FiServer, FiSmartphone, FiTarget,
-  FiMonitor, FiShield, FiGlobe, FiBookOpen, FiActivity,
+  FiGlobe, FiBookOpen, FiActivity,
   FiDollarSign, FiHardDrive, FiLock,
   FiCompass, FiRefreshCw, FiVideo, FiCheckCircle,
 } from "react-icons/fi";
@@ -147,7 +147,7 @@ export default function PortfolioHome() {
             <div className="profile-card">
               <div><small>CURRENT ROLE</small><strong>Software Engineer</strong></div>
               <div><small>LOCATION</small><strong>Lahore, PK</strong></div>
-              <div><small>FOCUS</small><strong>Scalable Web</strong></div>
+              <div><small>FOCUS</small><strong>Full Stack &amp; AI</strong></div>
             </div>
           </div>
         </div>
