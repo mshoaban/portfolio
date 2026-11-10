@@ -30,21 +30,22 @@ const expertise = [
   { icon: <FiCloud />, title: "Cloud & Delivery", text: "Production deployments, CI/CD workflows, Linux administration, and cloud infrastructure ownership.", tags: ["AWS", "Azure", "CI/CD", "Linux"] },
   { icon: <FiCode />, title: "Database Architecture", text: "Performance-focused schema design, query optimization, and migrations for high-traffic production databases.", tags: ["MySQL", "PostgreSQL", "Redis", "Optimization"] },
   { icon: <FiCpu />, title: "Real-Time Systems", text: "Event-driven features, websockets, notifications, and background processing across distributed services.", tags: ["Pusher", "Sockets", "Queues", "Cron"] },
-  { icon: <FiSmartphone />, title: "Mobile APIs", text: "Secure backend services powering mobile apps with authentication, payments, and push notifications.", tags: ["REST", "Auth", "Payments", "Push"] },
+  { icon: <FiSmartphone />, title: "Mobile Applications", text: "React Native and Flutter applications with practical mobile UX, push notifications, secure APIs, and collector travel-distance tracking.", tags: ["React Native", "Flutter", "FCM", "Mobile UX"] },
+  { icon: <FiRefreshCw />, title: "CRM & Sales Automation", text: "Connected lead capture, automated follow-up, agent-assisted sales workflows, and contract signing, with GoHighLevel integrations that consolidate fragmented tools.", tags: ["GoHighLevel", "n8n", "Zapier", "Webhooks"] },
 ];
 
 const industries = [
-  { icon: <FiActivity />, title: "Healthcare", note: "1 platform", text: "Nationwide blood-screening with role-based access, mobile APIs, payments, messaging, and real-time notifications.", tags: ["RBAC", "Pusher", "Twilio", "Payments"] },
+  { icon: <FiActivity />, title: "Healthcare", note: "1 platform", text: "Blood-screening workflows with role-based access, payments, mobile notifications, an optimized admin panel, and collector travel-distance tracking.", tags: ["RBAC", "Pusher", "Twilio", "Payments"] },
   { icon: <FiDollarSign />, title: "Fintech", note: "1 platform", text: "Wallet & fiscal operations with mobile APIs, multi-currency payments, and AI-powered signature verification.", tags: ["Wallets", "PayPal", "APIs", "AI Verification"] },
-  { icon: <FiHardDrive />, title: "Enterprise & Ops", note: "3 platforms", text: "Machine tracking, fleet management, and internal tools delivered end-to-end with AI-assisted workflows.", tags: ["Laravel", "Livewire", "MySQL", "Dashboards"] },
+  { icon: <FiHardDrive />, title: "Enterprise & Ops", note: "3 platforms", text: "Machine import operations, automated manuals, freight records, and connected CRM and sales workflows for machinery businesses.", tags: ["Laravel", "Livewire", "MySQL", "Dashboards"] },
   { icon: <FiLock />, title: "Security", note: "1 platform", text: "Encrypted file and message sharing with password-protected links and role-based account management.", tags: ["Encryption", "RBAC", "Livewire", "MySQL"] },
   { icon: <FiGlobe />, title: "Social & Community", note: "2 platforms", text: "Live streaming, event discovery, music, debates, podcasts, and real-time engagement features.", tags: ["Live Streaming", "React", "Laravel", "AWS"] },
   { icon: <FiBookOpen />, title: "Education & Commerce", note: "Multiple systems", text: "Management and commerce systems for institutions, government programs, donations, and retail.", tags: ["Laravel", "Stripe", "CI", "E-commerce"] },
 ];
 
 const projects = [
-  { name: "SYM Forklift", category: "Operations Management", text: "Production platform for managing and tracking machines and forklifts, delivered end-to-end with AI-assisted development workflows.", tech: "Laravel · Livewire · MySQL" },
-  { name: "MedicsExams", category: "Healthcare Technology", text: "Nationwide blood-screening platform with role-based access, mobile APIs, payments, messaging, and real-time notifications.", tech: "Laravel · AWS · Pusher · Twilio" },
+  { name: "SYM Forklift", category: "Operations & Sales Automation", text: "Built a portal to replace paper-based workflows for machines imported from China to Australia. Automated machine-manual generation and centralized machine and freight records. Integrated GoHighLevel to connect lead capture, follow-up, sales agents, and contract signing.", tech: "Laravel · Livewire · MySQL · GoHighLevel · REST APIs", outcomes: ["Replaced ClickSend, Klaviyo, and Zapier workflows with GoHighLevel, and moved contract signing from DocuSign into GHL to reduce reliance on separate paid tools.", "Connected website, Facebook, Google, TikTok, and Instagram lead sources, with automated routing and follow-up to help prevent missed enquiries when staff are unavailable.", "In one recent month, the client received 45 inbound leads through social media DMs and the website with no paid advertising spend."] },
+  { name: "MedicsExams", category: "Healthcare & Mobile Workflows", text: "Built and improved a blood-screening platform and its React Native mobile app. Optimized admin-panel performance, improved the mobile user experience, and added automatic travel-distance tracking for sample collectors.", tech: "Laravel · React Native · MySQL · AWS · FCM · Notifee", outcomes: ["Optimized the admin panel for faster day-to-day operations and improved the mobile user experience.", "Added automatic collector travel-distance tracking to support sample-collection workflows.", "Delivered iOS/Android push notifications and migrated the legacy FCM HTTP integration to FCM v1."] },
   { name: "Fenapi", category: "Financial Management", text: "Management ecosystem with wallet and fiscal operations, mobile APIs, payments, and AI-powered signature verification.", tech: "CodeIgniter · REST APIs · PayPal" },
   { name: "SafeSend", category: "Security Platform", text: "Secure file and message sharing with encrypted, password-protected links and role-based account management.", tech: "Laravel · Livewire · MySQL" },
   { name: "LiveWaves & FreeSoil", category: "Social Platforms", text: "Interactive social products supporting live streaming, event discovery, music, debates, podcasts, and real-time engagement.", tech: "React.js · Laravel · AWS" },
@@ -57,6 +58,8 @@ const stack = [
   { group: "Databases", items: ["MySQL", "PostgreSQL", "MongoDB", "Redis"] },
   { group: "Cloud & DevOps", items: ["AWS", "Azure", "CI/CD", "Linux", "Docker", "Git"] },
   { group: "Real-Time & Messaging", items: ["Pusher", "Sockets", "Twilio", "Queues"] },
+  { group: "Automation & CRM", items: ["GoHighLevel", "n8n", "Zapier", "Webhooks", "Lead Routing", "Sales Workflows"] },
+  { group: "Mobile", items: ["React Native", "Flutter", "Dart", "FCM", "Notifee"] },
   { group: "AI-Assisted Delivery", items: ["ChatGPT", "Claude", "Codex", "Cursor"] },
 ];
 
@@ -121,11 +124,11 @@ export default function PortfolioHome() {
             <div className="availability"><span /> Available for new opportunities</div>
             <h1>
               Muhammad Shoaban
-              <span className="hero-role">Software Engineer | Full Stack &amp; AI-Assisted Delivery</span>
+              <span className="hero-role">Software Engineer | Full Stack, Mobile &amp; Automation</span>
             </h1>
             <p className="hero-summary">
               2+ Years | 15+ Projects Shipped | Delivering secure, scalable web applications
-              across healthcare, finance, enterprise, and social platforms.
+              and automating business workflows across healthcare, machinery, finance, and social platforms.
             </p>
             <div className="hero-actions">
               <a className="button primary" href="#projects">View my work <FiArrowRight /></a>
@@ -147,7 +150,7 @@ export default function PortfolioHome() {
             <div className="profile-card">
               <div><small>CURRENT ROLE</small><strong>Software Engineer</strong></div>
               <div><small>LOCATION</small><strong>Lahore, PK</strong></div>
-              <div><small>FOCUS</small><strong>Full Stack &amp; AI</strong></div>
+              <div><small>FOCUS</small><strong>Full Stack &amp; Automation</strong></div>
             </div>
           </div>
         </div>
@@ -176,8 +179,9 @@ export default function PortfolioHome() {
               communication, and consistent delivery.
             </p>
             <p>
-              I also contribute to task planning, code review, technical direction, and
-              project execution across multiple concurrent client engagements.
+              I turn paper-based operations and fragmented tools into connected systems,
+              from machine manuals and freight records to lead capture, sales follow-up,
+              and contract signing. I also contribute to planning, code review, and delivery.
             </p>
             <ul>
               <li><FiCheck /> Secure and maintainable architecture</li>
@@ -274,6 +278,11 @@ export default function PortfolioHome() {
                   <span>{p.category}</span>
                   <h3>{p.name}</h3>
                   <p>{p.text}</p>
+                  {"outcomes" in p && p.outcomes && (
+                    <ul aria-label={`${p.name} outcomes`}>
+                      {p.outcomes.map((outcome) => <li key={outcome}>{outcome}</li>)}
+                    </ul>
+                  )}
                   <strong>{p.tech}</strong>
                 </div>
               </article>
@@ -358,13 +367,13 @@ export default function PortfolioHome() {
               <div className="experience-meta"><span>APR 2024 — PRESENT</span><span>DERA GHAZI KHAN</span></div>
               <h3>Software Engineer</h3>
               <h4>RatedSol Tech</h4>
-              <p>Building full-cycle applications, technical planning, code review, task allocation, database architecture, REST API delivery, real-time systems, and Azure CI/CD workflows.</p>
+              <p>Building Laravel/PHP and React applications, React Native and Flutter mobile apps, REST APIs, and cloud deployments. Delivered SYM machinery operations and GHL sales automation, improved MedicsExams admin performance and mobile UX, and implemented collector travel-distance tracking. Contribute to technical planning, code review, team mentoring, and Azure CI/CD workflows.</p>
             </article>
             <article>
-              <div className="experience-meta"><span>JAN 2024 — MAR 2024</span><span>REMOTE</span></div>
+              <div className="experience-meta"><span>OCT 2023 — PRESENT</span><span>REMOTE</span></div>
               <h3>Web Application Developer</h3>
               <h4>Freelance — Fiverr &amp; Direct Clients</h4>
-              <p>Building secure backend services for international clients, collaborating with frontend teams, and improving database, API, and application performance.</p>
+              <p>Building and maintaining backend services for international clients, collaborating with React/Vue teams, optimizing databases and APIs, and delivering n8n, GoHighLevel, and Zapier automation for lead handling and business processes.</p>
             </article>
           </div>
         </div>
@@ -379,7 +388,7 @@ export default function PortfolioHome() {
           </div>
           <div className="experience-list">
             <article>
-              <div className="experience-meta"><span>2021 — 2025</span><span>GHAZI UNIVERSITY</span></div>
+              <div className="experience-meta"><span>SEP 2021 — APR 2025</span><span>GHAZI UNIVERSITY</span></div>
               <h3>BS Information Technology</h3>
               <p>Coursework in software engineering, database systems, information security, cloud computing, data structures, and algorithms.</p>
             </article>
