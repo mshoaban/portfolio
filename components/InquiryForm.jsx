@@ -91,10 +91,11 @@ export default function InquiryForm() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    const form = event.currentTarget;
     setError("");
     setStatus("submitting");
 
-    const formData = new FormData(event.currentTarget);
+    const formData = new FormData(form);
     const params = new URLSearchParams(window.location.search);
     const attribution = {
       utmSource: params.get("utm_source") || "",
@@ -138,8 +139,8 @@ export default function InquiryForm() {
         timeline: payload.timeline || "Not provided",
       });
       sendAnalyticsEvent("inquiry_submitted", { projectType: payload.projectType });
+      form.reset();
       setStatus("success");
-      event.currentTarget.reset();
     } catch (submitError) {
       setStatus("error");
       setError(submitError.message);
