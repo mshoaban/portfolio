@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Muhammad Shoaban — Portfolio
 
-## Getting Started
+Personal portfolio and freelance client inquiry site for **Muhammad Shoaban**, an independent Full-Stack Developer building Laravel + React web apps, SaaS platforms, APIs, and business automation.
 
-First, run the development server:
+Live site: https://muhammadshoaban.vercel.app
+
+## What is included
+
+- Freelance-first portfolio positioning, services, projects, experience, and availability
+- Project inquiry form with server-side validation, spam protection, UTM/source capture, and analytics conversion events
+- Email notifications through Resend
+- Submission storage through Supabase
+- Vercel Analytics and Speed Insights, with optional Google Analytics 4
+- SEO metadata, Open Graph/Twitter cards, Person schema, sitemap, and robots rules
+
+## Tech stack
+
+- Next.js 16 / React 19
+- Tailwind CSS 4 with custom CSS
+- Vercel Analytics and Speed Insights
+- Resend for inquiry email notifications
+- Supabase Postgres for inquiry storage
+- Cloudflare Turnstile for optional spam verification
+
+## Local development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Useful checks:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run lint
+npm run build
+```
 
-## Learn More
+## Environment variables
 
-To learn more about Next.js, take a look at the following resources:
+Copy the variable names from `.env.example` into Vercel Environment Variables. Never commit real secret values.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| Variable | Purpose |
+| --- | --- |
+| `RESEND_API_KEY` | Sends inquiry email notifications |
+| `RESEND_FROM_EMAIL` | Verified sender used by Resend |
+| `INQUIRY_NOTIFICATION_EMAIL` | Inbox that receives new inquiries |
+| `SUPABASE_URL` | Supabase project URL |
+| `SUPABASE_SERVICE_ROLE_KEY` | Server-only key used to insert inquiries |
+| `NEXT_PUBLIC_TURNSTILE_SITE_KEY` | Public Turnstile site key |
+| `TURNSTILE_SECRET_KEY` | Server-only Turnstile verification secret |
+| `NEXT_PUBLIC_GA_MEASUREMENT_ID` | Optional GA4 measurement ID |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+In local development, the inquiry API returns a dry-run success when neither Resend nor Supabase is configured. In production, at least one delivery method must be configured.
 
-## Deploy on Vercel
+## Supabase setup
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Run `supabase/schema.sql` in the Supabase SQL editor. It creates `public.project_inquiries` with row-level security enabled and no public policies. The Next.js API route inserts rows server-side with the service-role key.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Deployment
+
+The site is deployed on Vercel from this GitHub repository. Configure the environment variables in Vercel before sending production traffic to the inquiry form, then redeploy so the new values are available to the serverless API route.
+
+## Contact
+
+- Portfolio: https://muhammadshoaban.vercel.app
+- LinkedIn: https://www.linkedin.com/in/muhammad-shoaban/
+- GitHub: https://github.com/mshoaban

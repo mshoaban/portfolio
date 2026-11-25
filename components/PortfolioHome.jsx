@@ -12,9 +12,9 @@ import {
 } from "react-icons/fi";
 import ThemeToggle from "../components/ThemeToggle";
 import ChatWidget from "../components/ChatWidget";
+import InquiryForm from "../components/InquiryForm";
 
 const clients = [
-  { name: "RatedSol Tech", note: "Enterprise software house", tag: "Software House" },
   { name: "SYM Forklift", note: "Fleet & machinery ops", tag: "Operations" },
   { name: "MedicsExams", note: "Nationwide screening", tag: "Healthcare" },
   { name: "Fenapi", note: "Wallet & fiscal ops", tag: "Fintech" },
@@ -34,6 +34,30 @@ const expertise = [
   { icon: <FiRefreshCw />, title: "CRM & Sales Automation", text: "Connected lead capture, automated follow-up, agent-assisted sales workflows, and contract signing, with GoHighLevel integrations that consolidate fragmented tools.", tags: ["GoHighLevel", "n8n", "Zapier", "Webhooks"] },
 ];
 
+const services = [
+  {
+    icon: <FiLayers />,
+    title: "Web Apps & SaaS Development",
+    text: "Portals, dashboards, and SaaS platforms that replace spreadsheets, paper workflows, and fragmented tools with one connected system.",
+    includes: ["Laravel + React product builds", "Dashboards, portals & admin panels", "Auth, roles, payments & REST APIs"],
+    bestFor: "Businesses that need a reliable internal system or customer-facing platform.",
+  },
+  {
+    icon: <FiRefreshCw />,
+    title: "Business Automation & CRM",
+    text: "Lead capture, routing, follow-up, and contract workflows connected across your website, ads, social channels, and CRM.",
+    includes: ["GoHighLevel, n8n & Zapier workflows", "Lead routing & automated follow-up", "Forms, webhooks & sales pipelines"],
+    bestFor: "Teams losing enquiries or spending hours on manual follow-up.",
+  },
+  {
+    icon: <FiServer />,
+    title: "APIs, Mobile Backends & Improvements",
+    text: "Secure APIs and backend improvements for web and mobile products, including performance work on existing Laravel and Node.js systems.",
+    includes: ["REST APIs for web & mobile apps", "Database & admin-panel optimization", "Push notifications & third-party integrations"],
+    bestFor: "Products that need a stronger backend, faster operations, or new integrations.",
+  },
+];
+
 const industries = [
   { icon: <FiActivity />, title: "Healthcare", note: "1 platform", text: "Blood-screening workflows with role-based access, payments, mobile notifications, an optimized admin panel, and collector travel-distance tracking.", tags: ["RBAC", "Pusher", "Twilio", "Payments"] },
   { icon: <FiDollarSign />, title: "Fintech", note: "1 platform", text: "Wallet & fiscal operations with mobile APIs, multi-currency payments, and AI-powered signature verification.", tags: ["Wallets", "PayPal", "APIs", "AI Verification"] },
@@ -44,8 +68,8 @@ const industries = [
 ];
 
 const projects = [
-  { name: "SYM Forklift", category: "Operations & Sales Automation", text: "Built a portal to replace paper-based workflows for machines imported from China to Australia. Automated machine-manual generation and centralized machine and freight records. Integrated GoHighLevel to connect lead capture, follow-up, sales agents, and contract signing.", tech: "Laravel · Livewire · MySQL · GoHighLevel · REST APIs", outcomes: ["Replaced ClickSend, Klaviyo, and Zapier workflows with GoHighLevel, and moved contract signing from DocuSign into GHL to reduce reliance on separate paid tools.", "Connected website, Facebook, Google, TikTok, and Instagram lead sources, with automated routing and follow-up to help prevent missed enquiries when staff are unavailable.", "In one recent month, the client received 45 inbound leads through social media DMs and the website with no paid advertising spend."] },
-  { name: "MedicsExams", category: "Healthcare & Mobile Workflows", text: "Built and improved a blood-screening platform and its React Native mobile app. Optimized admin-panel performance, improved the mobile user experience, and added automatic travel-distance tracking for sample collectors.", tech: "Laravel · React Native · MySQL · AWS · FCM · Notifee", outcomes: ["Optimized the admin panel for faster day-to-day operations and improved the mobile user experience.", "Added automatic collector travel-distance tracking to support sample-collection workflows.", "Delivered iOS/Android push notifications and migrated the legacy FCM HTTP integration to FCM v1."] },
+  { name: "SYM Forklift", category: "Operations & Sales Automation", role: "Portal, machine-record automation, and GoHighLevel lead-to-contract workflow delivery.", text: "Built a portal to replace paper-based workflows for machines imported from China to Australia. Automated machine-manual generation and centralized machine and freight records. Integrated GoHighLevel to connect lead capture, follow-up, sales agents, and contract signing.", tech: "Laravel · Livewire · MySQL · GoHighLevel · REST APIs", outcomes: ["Replaced ClickSend, Klaviyo, and Zapier workflows with GoHighLevel, and moved contract signing from DocuSign into GHL to reduce reliance on separate paid tools.", "Connected website, Facebook, Google, TikTok, and Instagram lead sources, with automated routing and follow-up to help prevent missed enquiries when staff are unavailable.", "In one recent month, the client received 45 inbound leads through social media DMs and the website with no paid advertising spend."] },
+  { name: "MedicsExams", category: "Healthcare & Mobile Workflows", role: "Platform improvements, admin-panel performance, mobile UX, and collector travel-distance tracking.", text: "Built and improved a blood-screening platform and its React Native mobile app. Optimized admin-panel performance, improved the mobile user experience, and added automatic travel-distance tracking for sample collectors.", tech: "Laravel · React Native · MySQL · AWS · FCM · Notifee", outcomes: ["Optimized the admin panel for faster day-to-day operations and improved the mobile user experience.", "Added automatic collector travel-distance tracking to support sample-collection workflows.", "Delivered iOS/Android push notifications and migrated the legacy FCM HTTP integration to FCM v1."] },
   { name: "Fenapi", category: "Financial Management", text: "Management ecosystem with wallet and fiscal operations, mobile APIs, payments, and AI-powered signature verification.", tech: "CodeIgniter · REST APIs · PayPal" },
   { name: "SafeSend", category: "Security Platform", text: "Secure file and message sharing with encrypted, password-protected links and role-based account management.", tech: "Laravel · Livewire · MySQL" },
   { name: "LiveWaves & FreeSoil", category: "Social Platforms", text: "Interactive social products supporting live streaming, event discovery, music, debates, podcasts, and real-time engagement.", tech: "React.js · Laravel · AWS" },
@@ -60,23 +84,23 @@ const stack = [
   { group: "Real-Time & Messaging", items: ["Pusher", "Sockets", "Twilio", "Queues"] },
   { group: "Automation & CRM", items: ["GoHighLevel", "n8n", "Zapier", "Webhooks", "Lead Routing", "Sales Workflows"] },
   { group: "Mobile", items: ["React Native", "Flutter", "Dart", "FCM", "Notifee"] },
-  { group: "AI-Assisted Delivery", items: ["ChatGPT", "Claude", "Codex", "Cursor"] },
+  { group: "Payments & Integrations", items: ["Stripe", "PayPal", "Twilio", "Webhooks", "Third-Party APIs"] },
 ];
 
 const howIWork = [
   { icon: <FiCompass />, title: "Scope First", text: "I ask the questions most developers skip. What's the real problem? If we're not the right fit, I'll say so before a contract." },
   { icon: <FiRefreshCw />, title: "Full Ownership", text: "From database schema to production deployment — I take end-to-end responsibility for outcomes, not just tickets." },
-  { icon: <FiVideo />, title: "Daily Async Updates", text: "Screenshot or video updates as work happens, not at the end of a sprint. Full overlap with EU, flexible with US." },
+  { icon: <FiVideo />, title: "Daily Async Updates", text: "Screenshot or video updates as work happens, not at the end of a sprint. Async-first, with scheduled calls across UK, EU, US, and Australia time zones." },
   { icon: <FiCheckCircle />, title: "Production-Grade QA", text: "Tested before delivery, performance-optimized, and code-reviewed with the same rigor I'd want for my own products." },
 ];
 
 const timezones = [
-  { flag: "🇬🇧", zone: "UK / EU / Middle East", badge: "Strong", sub: "GMT, CET, Dubai (UTC+4)", note: "Full 8-hour workday overlap" },
-  { flag: "🇺🇸", zone: "US East Coast", badge: "Strong", sub: "EST / EDT", note: "5-hour morning overlap" },
-  { flag: "🇺🇸", zone: "US Central", badge: "Strong", sub: "CST / CDT", note: "4-hour morning overlap" },
-  { flag: "🇸🇬", zone: "Singapore / China", badge: "Strong", sub: "SGT (UTC+8)", note: "5-hour afternoon overlap" },
-  { flag: "🇺🇸", zone: "US Mountain / West Coast", badge: "Async", sub: "MST / PST / PDT", note: "1-3 hour overlap, async-friendly" },
-  { flag: "🇦🇺", zone: "Australia East", badge: "Async", sub: "AEDT (UTC+11)", note: "2-hour afternoon overlap" },
+  { flag: "🇬🇧", zone: "UK / EU / Middle East", badge: "Strong", sub: "GMT, CET, Dubai (UTC+4)", note: "Substantial overlap with UK and EU working hours" },
+  { flag: "🇺🇸", zone: "US East Coast", badge: "Async", sub: "EST / EDT", note: "Async updates with scheduled calls" },
+  { flag: "🇺🇸", zone: "US Central", badge: "Async", sub: "CST / CDT", note: "Async updates with scheduled calls" },
+  { flag: "🇸🇬", zone: "Singapore / China", badge: "Strong", sub: "SGT (UTC+8)", note: "Good afternoon overlap from Pakistan" },
+  { flag: "🇺🇸", zone: "US Mountain / West Coast", badge: "Async", sub: "MST / PST / PDT", note: "Async-first with scheduled calls" },
+  { flag: "🇦🇺", zone: "Australia East", badge: "Async", sub: "AEDT (UTC+11)", note: "Async-first with scheduled calls" },
 ];
 
 export default function PortfolioHome() {
@@ -91,15 +115,16 @@ export default function PortfolioHome() {
             <span>MS</span>
             <div>
               <strong>Muhammad Shoaban</strong>
-              <small>Software Engineer</small>
+              <small>Full-Stack Developer</small>
             </div>
           </a>
           <nav className={open ? "main-nav open" : "main-nav"} aria-label="Main navigation">
             <a href="#about" onClick={close}>About</a>
+            <a href="#services" onClick={close}>Services</a>
             <a href="#expertise" onClick={close}>Expertise</a>
             <a href="#projects" onClick={close}>Projects</a>
             <a href="#experience" onClick={close}>Experience</a>
-            <a href="#contact" className="nav-contact" onClick={close}>Contact</a>
+            <a href="#contact" className="nav-contact" onClick={close}>Start a project</a>
           </nav>
           <div className="header-tools">
             <ThemeToggle />
@@ -121,24 +146,23 @@ export default function PortfolioHome() {
         <div className="container hero-layout">
           <div className="hero-copy">
             <p className="hero-hello">Hi, I&apos;m</p>
-            <div className="availability"><span /> Available for new opportunities</div>
+            <div className="availability"><span /> Available for freelance projects</div>
             <h1>
               Muhammad Shoaban
-              <span className="hero-role">Software Engineer | Full Stack, Mobile &amp; Automation</span>
+              <span className="hero-role">Full-Stack Developer | Laravel + React Web Apps &amp; Automation</span>
             </h1>
             <p className="hero-summary">
-              2+ Years | 15+ Projects Shipped | Delivering secure, scalable web applications
-              and automating business workflows across healthcare, machinery, finance, and social platforms.
+              I build Laravel + React web apps and SaaS platforms that replace manual work.
+              15+ projects shipped across healthcare, machinery, finance, and social platforms — working directly with me, with no agency handoff.
             </p>
             <div className="hero-actions">
-              <a className="button primary" href="#projects">View my work <FiArrowRight /></a>
-              <a className="button secondary" href="/resume_latest_new.pdf" download>
-                <FiDownload /> Download Resume
-              </a>
+              <a className="button primary" href="#contact">Start a project <FiArrowRight /></a>
+              <a className="button secondary" href="#projects">View my work</a>
             </div>
             <div className="hero-links">
-              <a href="https://github.com/muhammad-shoaban" target="_blank" rel="noreferrer"><FiGithub /> GitHub</a>
+              <a href="https://github.com/mshoaban" target="_blank" rel="noreferrer"><FiGithub /> GitHub</a>
               <a href="https://www.linkedin.com/in/muhammad-shoaban/" target="_blank" rel="noreferrer"><FiLinkedin /> LinkedIn</a>
+              <a href="/resume_latest_new.pdf" download><FiDownload /> Resume</a>
             </div>
           </div>
           <div className="profile-panel">
@@ -148,9 +172,9 @@ export default function PortfolioHome() {
               </div>
             </div>
             <div className="profile-card">
-              <div><small>CURRENT ROLE</small><strong>Software Engineer</strong></div>
+              <div><small>WORKING AS</small><strong>Independent Full-Stack Developer</strong></div>
               <div><small>LOCATION</small><strong>Lahore, PK</strong></div>
-              <div><small>FOCUS</small><strong>Full Stack &amp; Automation</strong></div>
+              <div><small>FOCUS</small><strong>Laravel, React &amp; Automation</strong></div>
             </div>
           </div>
         </div>
@@ -158,7 +182,7 @@ export default function PortfolioHome() {
           <div><strong>2+</strong><span>Years Experience</span></div>
           <div><strong>15+</strong><span>Projects Shipped</span></div>
           <div><strong>6+</strong><span>Industries Served</span></div>
-          <div><strong>100%</strong><span>Delivery Ownership</span></div>
+          <div><strong>45</strong><span>Inbound leads in one month for SYM</span></div>
         </div>
       </section>
 
@@ -171,7 +195,7 @@ export default function PortfolioHome() {
           </div>
           <div className="about-copy">
             <div className="about-pill">
-              <FiTarget /> Currently exploring: Agentic AI, RAG Pipelines &amp; MCP Integration
+              <FiTarget /> Independent developer — you work directly with me, from scope to deployment
             </div>
             <p>
               I design, build, and deploy production applications from the database layer to
@@ -197,7 +221,7 @@ export default function PortfolioHome() {
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="container">
           <div className="section-heading centered">
-            <p className="overline">CLIENTS &amp; PRODUCTS</p>
+            <p className="overline">PLATFORMS &amp; PRODUCTS</p>
             <h2>Platforms I&apos;ve helped build and ship.</h2>
           </div>
           <div className="clients-grid">
@@ -207,6 +231,31 @@ export default function PortfolioHome() {
                 <p>{c.note}</p>
                 <span className="tag">{c.tag}</span>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SERVICES */}
+      <section className="section" id="services" style={{ paddingTop: 0 }}>
+        <div className="container">
+          <div className="section-heading centered">
+            <p className="overline">FREELANCE SERVICES</p>
+            <h2>Clear ways to work with me directly.</h2>
+            <p>No agency handoff. You discuss scope, progress, and delivery directly with the developer building your product.</p>
+          </div>
+          <div className="services-grid">
+            {services.map((service) => (
+              <article className="service-card" key={service.title}>
+                <div className="card-icon">{service.icon}</div>
+                <h3>{service.title}</h3>
+                <p>{service.text}</p>
+                <ul>
+                  {service.includes.map((item) => <li key={item}><FiCheck /> {item}</li>)}
+                </ul>
+                <p className="service-best"><strong>Best for:</strong> {service.bestFor}</p>
+                <a className="text-link" href="#contact">Discuss this service <FiArrowRight /></a>
+              </article>
             ))}
           </div>
         </div>
@@ -277,6 +326,7 @@ export default function PortfolioHome() {
                 <div className="project-body">
                   <span>{p.category}</span>
                   <h3>{p.name}</h3>
+                  {"role" in p && p.role ? <p className="project-role"><strong>My role:</strong> {p.role}</p> : null}
                   <p>{p.text}</p>
                   {"outcomes" in p && p.outcomes && (
                     <ul aria-label={`${p.name} outcomes`}>
@@ -364,10 +414,10 @@ export default function PortfolioHome() {
           </div>
           <div className="experience-list">
             <article>
-              <div className="experience-meta"><span>APR 2024 — PRESENT</span><span>DERA GHAZI KHAN</span></div>
+              <div className="experience-meta"><span>JUL 2024 — PRESENT</span><span>LAHORE, PK</span></div>
               <h3>Software Engineer</h3>
               <h4>RatedSol Tech</h4>
-              <p>Building Laravel/PHP and React applications, React Native and Flutter mobile apps, REST APIs, and cloud deployments. Delivered SYM machinery operations and GHL sales automation, improved MedicsExams admin performance and mobile UX, and implemented collector travel-distance tracking. Contribute to technical planning, code review, team mentoring, and Azure CI/CD workflows.</p>
+              <p>Started as an intern from Apr to Jun 2024. Building Laravel/PHP and React applications, React Native and Flutter mobile apps, REST APIs, and cloud deployments. Delivered SYM machinery operations and GHL sales automation, improved MedicsExams admin performance and mobile UX, and implemented collector travel-distance tracking. Contribute to technical planning, code review, team mentoring, and Azure CI/CD workflows.</p>
             </article>
             <article>
               <div className="experience-meta"><span>OCT 2023 — PRESENT</span><span>REMOTE</span></div>
@@ -400,11 +450,17 @@ export default function PortfolioHome() {
       <section className="contact-section" id="contact">
         <div className="container contact-layout">
           <div>
-            <p className="overline">LET&apos;S WORK TOGETHER</p>
-            <h2>Bring me the problem that&apos;s been stuck.</h2>
-            <p>I&apos;m open to remote, hybrid, and on-site roles, relocation, freelance projects, and technical collaboration.</p>
-          </div>
-          <div className="contact-card">
+            <p className="overline">START A PROJECT</p>
+            <h2>Tell me about the project you want to build.</h2>
+            <p>
+              Share your goal, timeline, and budget range. I will review the fit directly —
+              no agency handoff — and reply with the next practical step.
+            </p>
+            <p>
+              Working with clients remotely across the UK, EU, US, Canada, and Australia,
+              with async updates and scheduled calls.
+            </p>
+            <div className="contact-card contact-direct">
             <a href="mailto:mshoaban09@gmail.com">
               <FiMail />
               <span><small>EMAIL</small><strong>mshoaban09@gmail.com</strong></span>
@@ -420,7 +476,9 @@ export default function PortfolioHome() {
               <span><small>LINKEDIN</small><strong>Muhammad Shoaban</strong></span>
               <FiArrowRight />
             </a>
+            </div>
           </div>
+          <InquiryForm />
         </div>
       </section>
 
@@ -428,7 +486,7 @@ export default function PortfolioHome() {
         <div className="container footer-inner">
           <div className="logo">
             <span>MS</span>
-            <div><strong>Muhammad Shoaban</strong><small>Software Engineer</small></div>
+            <div><strong>Muhammad Shoaban</strong><small>Full-Stack Developer</small></div>
           </div>
           <p>© 2026 Muhammad Shoaban. All rights reserved.</p>
           <a href="#top">Back to top ↑</a>
