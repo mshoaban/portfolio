@@ -417,7 +417,7 @@ export default function PortfolioHome() {
               <div className="experience-meta"><span>JUL 2024 — PRESENT</span><span>LAHORE, PK</span></div>
               <h3>Software Engineer</h3>
               <h4>RatedSol Tech</h4>
-              <p>Started as an intern from Apr to Jun 2024. Building Laravel/PHP and React applications, React Native and Flutter mobile apps, REST APIs, and cloud deployments. Delivered SYM machinery operations and GHL sales automation, improved MedicsExams admin performance and mobile UX, and implemented collector travel-distance tracking. Contribute to technical planning, code review, team mentoring, and Azure CI/CD workflows.</p>
+              <p>During my internship (Apr–Jun 2024) I contributed to client projects in PHP and Laravel before moving into the Software Engineer role. Building Laravel/PHP and React applications, React Native and Flutter mobile apps, REST APIs, and cloud deployments. Delivered SYM machinery operations and GHL sales automation, improved MedicsExams admin performance and mobile UX, and implemented collector travel-distance tracking. Contribute to technical planning, code review, team mentoring, and Azure CI/CD workflows.</p>
             </article>
             <article>
               <div className="experience-meta"><span>OCT 2023 — PRESENT</span><span>REMOTE</span></div>
